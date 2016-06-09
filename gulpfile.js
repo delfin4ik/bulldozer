@@ -14,7 +14,7 @@ gulp.task ('missionZero', function(){
 });
 
 gulp.task('missionOne', function(){
-	gulp.src('dev/*.css')
+	gulp.src('dev/css/*.css')
 		.pipe(concatCss('style.css'))
 		.pipe(autopref({
 			browsers:['last 10 version'],
@@ -38,7 +38,7 @@ gulp.task('missionThree', function(){
 gulp.task('default', function(){
 	gulp.start('missionOne', 'missionTwo', 'missionZero', 'missionThree');
 
-	gulp.watch(['dev/*.css'], function(){
+	gulp.watch(['dev/css/*.css'], function(){
 		gulp.start('missionOne');
 	});	
 	gulp.watch(['dev/html/**/*.html'], function(){
